@@ -2,7 +2,12 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.impute import KNNImputer
+from sklearn.preprocessing import RobustScaler, OneHotEncoder
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
 
 @st.cache_resource
 def load_model():

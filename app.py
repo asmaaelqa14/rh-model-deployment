@@ -2,6 +2,16 @@ import streamlit as st
 import joblib
 import pandas as pd
 
+
+
+@st.cache_resource
+def load_model():
+    return joblib.load("final_pipeline_model.pkl")
+
+model = load_model()
+
+
+
 # Titre de l'application
 st.title("🧠 Prédiction RH - Départ d'un employé")
 
